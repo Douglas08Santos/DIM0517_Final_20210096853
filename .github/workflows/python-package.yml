@@ -41,7 +41,7 @@ jobs:
       contents: write
     steps:   
     - name: Zip artifact for deployment
-      run: zip ././Calc.zip ././Calc.py ././test_calc.py ././README.md -r
+      run: zip ./././Calc.zip ./././Calc.py ./././test_calc.py ./././README.md -r
 
     - name: Bump version and push tag
       id: tagbuild
