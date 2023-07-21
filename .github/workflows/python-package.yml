@@ -32,17 +32,5 @@ jobs:
         python test_calc.py
     - name: Create tag
       run: |
-        python test_calc.py
-    
-  tag-build:
-    runs-on: ubuntu-22.04
-    needs: build
-    permissions:
-      contents: write
-    steps:
-    - name: Bump version and push tag
-      id: tagbuild
-      uses: anothrNick/github-tag-action@1.64.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CUSTOM_TAG: build_${{ env.NOW }}
+       git tag build_$('%Y%m%d%H%M%S') && git push tag
+  
