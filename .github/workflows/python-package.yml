@@ -41,8 +41,6 @@ jobs:
       contents: write
     steps:
     - name: Set current date as env variable
-      run: echo "build_$(date +'m%d%H%M')" >> $GITHUB_ENV
-
     - uses: actions/checkout@v3
       with:
         fetch-depth: '0'
@@ -55,4 +53,4 @@ jobs:
       uses: anothrNick/github-tag-action@1.64.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CUSTOM_TAG: build-${{ env.NOW }}
+        CUSTOM_TAG: build_${{ env.NOW }}
