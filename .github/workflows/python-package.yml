@@ -39,10 +39,7 @@ jobs:
     needs: build
     permissions:
       contents: write
-    steps:   
-    - name: Zip artifact for deployment
-      run: zip ./././Calc.zip ./././Calc.py ./././test_calc.py ./././README.md -r
-
+    steps:
     - name: Bump version and push tag
       id: tagbuild
       uses: anothrNick/github-tag-action@1.64.0
