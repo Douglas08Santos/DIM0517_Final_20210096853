@@ -30,7 +30,3 @@ jobs:
     - name: Test with unittest
       run: |
         python test_calc.py
-    - name: Create tag
-      run: |
-       git tag build_$('%Y%m%d%H%M%S') && git push tags
-  
